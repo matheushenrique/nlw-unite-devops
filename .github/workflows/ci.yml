@@ -32,3 +32,5 @@ jobs:
       - name: Push image
         run: |
           docker push matheushenriquepr/passin:${{ steps.generate_sha.outputs.sha }}
+          docker tag matheushenriquepr/passin:${{ steps.generate_sha.outputs.sha }} matheushenriquepr/passin:latest
+          docker push matheushenriquepr/passin:latest
